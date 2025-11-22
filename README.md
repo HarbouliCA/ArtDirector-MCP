@@ -89,16 +89,17 @@ Add this to your `.gemini/antigravity/mcp_config.json`:
 
 ---
 
-## 🛠️ Usage
-Once installed, you can ask your AI Agent:
+## 🛠️ Usage: The Consultant Workflow
 
-> *"Generate a bar chart for Revenue Growth vs Churn. Then audit it with ArtDirector."*
+**ArtDirector acts as an advisor, not a blocker.**
 
-The AI will:
-1.  Generate the chart code.
-2.  Send the chart definition to **ArtDirector**.
-3.  **ArtDirector** will reply: *"⚠️ Semantic Error: 'Churn' is colored Green. Suggest using Red."*
-4.  The AI will fix the code automatically.
+1.  **Generate**: The AI generates the visualization code first.
+2.  **Consult**: The AI sends the design to ArtDirector.
+3.  **Report**: ArtDirector returns a list of **Suggestions** (e.g., *"Consider changing 'Churn' to Red"*).
+4.  **Decide**: The User (You) decides whether to apply the changes.
+5.  **Verify**: If changes are made, ArtDirector re-checks the final output to ensure accuracy.
+
+> *"Generate the chart, then ask ArtDirector for a design review."*
 
 ---
 

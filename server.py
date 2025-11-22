@@ -13,9 +13,9 @@ def audit_visualization(chart_data):
     Input: JSON object with 'elements' (list of {text, color, bbox})
     """
     report = {
-        "status": "PASS",
-        "semantic_errors": [],
-        "layout_errors": []
+        "status": "APPROVED",
+        "semantic_observations": [],
+        "layout_observations": []
     }
     
     elements = chart_data.get('elements', [])
@@ -27,17 +27,17 @@ def audit_visualization(chart_data):
         if text and color:
             warning = color_critic.audit(text, color)
             if warning:
-                report['semantic_errors'].append(warning)
+                report['semantic_observations'].append(warning)
                 
     # 2. Run Layout Audit
     # Filter only elements with bounding boxes
     layout_elements = [e for e in elements if 'bbox' in e]
     layout_warnings = layout_critic.audit(layout_elements)
-    report['layout_errors'].extend(layout_warnings)
+    report['layout_observations'].extend(layout_warnings)
     
     # Determine Final Status
-    if report['semantic_errors'] or report['layout_errors']:
-        report['status'] = "FAIL"
+    if report['semantic_observations'] or report['layout_observations']:
+        report['status'] = "REVIEW_SUGGESTED"
         
     return report
 
