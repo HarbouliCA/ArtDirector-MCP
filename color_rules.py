@@ -6,7 +6,7 @@ class ColorCritic:
     """
     
     # Semantic Keywords
-    RED_KEYWORDS = [r'danger', r'decrease', r'loss', r'error', r'churn', r'deficit', r'drop', r'negative', r'missed']
+    RED_KEYWORDS = [r'danger', r'decrease', r'loss', r'error', r'churn', r'deficit', r'drop', r'negative', r'missed', r'cost', r'expense', r'spending']
     GREEN_KEYWORDS = [r'safe', r'increase', r'profit', r'success', r'win', r'revenue', r'growth', r'positive', r'scored', r'goal']
     ORANGE_KEYWORDS = [r'risk', r'warning', r'potential', r'pending', r'review', r'caution']
 
